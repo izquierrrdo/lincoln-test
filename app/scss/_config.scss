@@ -1,0 +1,78 @@
+// USER VARIABLES SECTION
+
+$accent: orange; // Accent Color
+$fontsize: 16px; // Body Font Size
+$textcolor: #333; // Text Color
+$accent1: #1282C3;
+$total_black: #000;
+$white: #fff;
+$dark_grey: #122332;
+$light_grey: #59656F;
+$light_grey_2: #F6F6F6;
+$light_grey_3: #D1D1D1;
+$dark_blue: #162D44;
+$light_blue: #1282C3;
+$hover_blue: #304050;
+$light_red: #E27878;
+$system: -apple-system, BlinkMacSystemFont, Arial, sans-serif; // System Font Family
+
+
+// IMPORT SECTION
+@import 'node_modules/reset-css/sass/reset'; // Classical reset.css
+@import 'node_modules/slick-carousel/slick/slick.scss'; // Slick slider scss
+@import 'node_modules/slick-carousel/slick/slick-theme.scss'; // Slick slider scss theme
+
+
+// FONTS LOAD SECTION
+@mixin font($fname, $fstyle, $fweight, $furl) {
+  @font-face {
+    font-family: $fname;
+    font-style: $fstyle;
+    font-weight: $fweight;
+    // font-display: swap; // Uncomment to initially display system fonts
+    src: local($fname), url($furl) format('woff2');
+  }
+}
+
+// GENERAL DOCUMENT STYLES
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+::placeholder {
+  color: #666;
+}
+
+::selection {
+  background-color: $accent;
+  color: #fff;
+}
+
+input, textarea {
+  outline: none;
+
+  &:focus:required:invalid {
+    border-color: red
+  }
+
+  &:required:valid {
+    border-color: green
+  }
+}
+
+body {
+  font-family: 'Montserrat', serif;
+  font-size: $fontsize;
+  min-width: 320px;
+  font-weight: normal;
+  position: relative;
+  line-height: 1.65;
+  overflow-x: hidden;
+  color: $textcolor;
+}
